@@ -3,7 +3,7 @@
 ## Exercise I
 
 a)
-O(log n)
+O(n ^ 2)
 
 b)
 O(n log n) .. Reason why I gave this rating is because first loop is O(n).. Second loop is O(log n)
