@@ -3,7 +3,7 @@
 ## Exercise I
 
 a)
-O(n^3).. Exponential
+O(log n)
 
 b)
 O(n log n) .. Reason why I gave this rating is because first loop is O(n).. Second loop is O(log n)
