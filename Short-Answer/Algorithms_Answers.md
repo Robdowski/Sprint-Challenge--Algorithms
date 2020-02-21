@@ -11,6 +11,30 @@ O(n log n) .. Reason why I gave this rating is because first loop is O(n).. Seco
 c)
 O(n)..  this one doesn't seem to scale with a higher input
 
+```python
+a)  a = 0
+    while (a < n * n * n):
+      a = a + n * n
+```
+
+
+```
+b)  sum = 0
+    for i in range(n):
+      j = 1
+      while j < n:
+        j *= 2
+        sum += 1
+```
+
+```
+c)  def bunnyEars(bunnies):
+      if bunnies == 0:
+        return 0
+
+      return 2 + bunnyEars(bunnies-1)
+```
+
 ## Exercise II
 
 ## I am assuming that the top floor will most likely break the egg in most cases, and that the bottom floor will almost always not break the egg.

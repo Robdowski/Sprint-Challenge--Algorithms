@@ -118,7 +118,7 @@ class SortingRobot:
                 self.swap_item()
                 break
 
-            if self.compare_item() > 0: ## Check the very last index, since we can't go any further right
+            if self.compare_item() >= 0: ## Check the very last index, since we can't go any further right
                 self.swap_item()
                 self.set_light_off()
         
