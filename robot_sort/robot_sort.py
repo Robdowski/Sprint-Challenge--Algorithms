@@ -96,8 +96,50 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
+        self.swap_item() # Swap with first index
+        self.move_right() # Move to next index
+        
+
+        while True:  # Until light is on at the end (we didn't swap anything), keep restarting the loop
+
+            self.set_light_on() # Set it on in the beginning, if it's off at the end, we're sorted
+
+            while self.can_move_right():
+                if self.compare_item() is None: ## If for any reason, we're in the wrong spot,
+                    self.move_right() 
+                elif self.compare_item() > 0:            ## Check if it's smaller, swap if it is
+                    self.swap_item()
+                    self.set_light_off()
+                    self.move_right()
+                else:
+                    self.move_right()
+
+            if self.compare_item() is None: ## We are at the last index, if this one is None, it's the last item to sort, and we have it in our hand (hopefully)
+                self.swap_item()
+                break
+
+            if self.compare_item() > 0: ## Check the very last index, since we can't go any further right
+                self.swap_item()
+                self.set_light_off()
+        
+            while self.compare_item() is not None: #Move all the way back to the empty spot
+                self.move_left()
+
+            if self.light_is_on(): # We didn't swap anything, so we break.
+                break
+
+            ## WE SHOULD BE AT A 'NONE' POSITION
+            self.swap_item()
+            self.move_right()
+            self.swap_item()
+            self.move_right()
+           
+
+            
+
+            
+        
+        
 
 
 if __name__ == "__main__":
